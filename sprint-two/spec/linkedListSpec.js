@@ -50,4 +50,16 @@ describe("linkedList", function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it("should designate a new head when new nodes are added", function(){
+    linkedList.addToHead(4);
+    expect(linkedList.head.value).to.equal(4);
+    linkedList.addToHead(5);
+    expect(linkedList.head.value).to.equal(5);
+  });
+  it("should not contain a value that was removed", function(){
+    linkedList.addToHead(4);
+    linkedList.addToHead(5);
+    linkedList.removeTail();
+    assert.isFalse(linkedList.contains(4));
+  });
 });
