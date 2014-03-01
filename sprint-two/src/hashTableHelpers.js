@@ -31,6 +31,8 @@ var makeLimitedArray = function(limit){
 
   var checkLimit = function(index){
     if(typeof index !== 'number'){ throw new Error('setter requires a numeric index for its first argument'); }
+    //console.log("limit: ", limit);
+    //console.log("index: ", index);
     if(limit <= index){ throw new Error('Error trying to access an over-the-limit index'); }
   };
 
