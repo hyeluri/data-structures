@@ -26,8 +26,9 @@ describe("binarySearchTree", function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
-    assert.isTrue(binarySearchTree.contains(7));
-    assert.isFalse(binarySearchTree.contains(8));
+    console.log(binarySearchTree);
+    assert.isTrue(binarySearchTree.contains(2));
+    assert.isFalse(binarySearchTree.contains(1));
   });
   
   it("should execute a callback on every value in a tree using 'depthFirstLog'", function(){
@@ -35,6 +36,7 @@ describe("binarySearchTree", function() {
     var func = function(value){ array.push(value); }
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
+    binarySearchTree.insert(9);
     binarySearchTree.depthFirstLog(func);
     assert.notStrictEqual(array, [5,2,3]);
   });

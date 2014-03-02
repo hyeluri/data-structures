@@ -12,14 +12,12 @@ describe("hashTable", function() {
   it("should have methods named 'insert', 'remove', and 'retrieve", function() {
     expect(hashTable.insert).to.be.a('function');
     expect(hashTable.remove).to.be.a('function');
-    //expect(hashTable.retrieve).to.be.a('function');
+    expect(hashTable.retrieve).to.be.a('function');
   });
 
   it("should store values that were inserted", function() {
     hashTable.insert("Steven", "Seagal");
-    hashTable.insert("val1", "Seagal");
-    hashTable.insert("val2", "Seagal");
-    expect(hashTable.retrieve("val1")).to.equal("val1");
+    expect(hashTable.retrieve("Steven")).to.equal("Seagal");
   });
 
   it("should not contain values that were not inserted", function() {
@@ -35,7 +33,7 @@ describe("hashTable", function() {
 
   it("should handle hash function collisions", function(){
     expect(window.getIndexBelowMaxForKey).to.be.ok;
-    var v1 = 'val1', v2 = 'val9';
+    var v1 = 'val1', v2 = 'val2';
     hashTable.insert(v1, v1);
     hashTable.insert(v2, v2);
     expect(hashTable.retrieve(v1)).to.equal(v1);
