@@ -18,7 +18,7 @@ HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   
   var result = this._storage.get(i);
-  console.log("retrieve key",i, "value: ", result);
+  //console.log("retrieve key",i, "value: ", result);
   if(result !== null && result !== undefined){
     return result[1];
   }else
@@ -53,7 +53,7 @@ HashTable.prototype.resizeLimit = function(){
    //  console.log(that._storage.get(3));
       if(value!=undefined && value != null){
         var i = getIndexBelowMaxForKey(value[0], that._limit);
-        console.log("each key ", i, "each value", value);
+       // console.log("each key ", i, "each value", value);
         that._tempStorage.set(i,value);
       }
     });
